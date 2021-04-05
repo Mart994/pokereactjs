@@ -15,19 +15,23 @@ nav {
 
 .searchbar-container{
     display: flex;
-    margin: 0px auto;
-    padding: 0 20px;
+    margin: 0px 10px;
+    padding: 0;
     align-items: center;
+    flex: 1;
+    align-items: stretch;
 }
 .searchbar{
     background: white;
     margin-right: 20px;
+    flex: 1;
 }
 .searchbar input{
     padding: 10px;
     box-shadow: 0px 2px 2px rgba(0,0,0,0.25);
     border-radius: 3px;
     border: none;
+    width: 100%;
 }
 .searchbar input:focus{
     outline: none;
@@ -53,9 +57,57 @@ nav {
 
 .pokedex-grid{
     display: grid;
-    grid-auto-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 18px;
     padding: 0px 10px;
+}
+.pokemon-card {
+    display: flex;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+}
+.pokemon-img-container{
+    padding: 5px;
+}
+.pokemon-img{
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+.pokemon-type{
+    display: flex;
+}
+.pokemon-type-text{
+    margin-right: 10px;
+    text-transform: capitalize;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0px 10px 10px;
+    flex: 1;
+}
+.card-tittle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-tittle h3 {
+    text-transform: capitalize;
+}
+.card-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.paginacion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .App {

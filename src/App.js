@@ -7,25 +7,26 @@ import { getPokemons, getPokemonData } from "./Api/pokeapi";
 
 function App() {
 
-  const [pokemons, setPokemons] = useState([])
+  const [pokemons, setPokemons] = useState([]);
+  const [page, setPage]=useState;
+  // const [total,setTotal]=useState;
+  const [loading, setLoading]=useState(true);
 
   const fetchPokemons = async () => {
     try {
-      const data = await getPokemons();
-      console.log(data.results);
+      const data = await getPokemons(25, 25*page);
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       })
       const results = await Promise.all(promises);
       setPokemons(results);
-    } catch (error) {
-      
-    }
+      setLoading(false);
+    } catch (error) {}
   }
 
   useEffect(() => {
     fetchPokemons();
-  }, [])
+  }, [page])
 
   return (
     <>
@@ -33,7 +34,12 @@ function App() {
         <Navbar />
         <div className="App">
           <Searchbar />
-          <Pokedex pokemons={pokemons}/>
+          {loading ? <div>Cargando...</div> :
+            <Pokedex
+              pokemons={pokemons}
+              page={page}
+              setPage={setPage}/>
+          }
         </div>
       </div>
     </>
