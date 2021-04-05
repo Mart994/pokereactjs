@@ -16,21 +16,21 @@ export const Searchbar = () => {
 
     return (
         <>
-          <div>
-              <input placeholder="Buscar Pokemon..." 
+          <div className="searchbar-container">
+              <div className="searchbar">
+                <input placeholder="Buscar Pokemon..." 
                     type="text"
                     onChange={handleChange}
                     />
-            <button onClick={handleClick}>Buscar</button>
-          </div>
-          <div>
-            {pokemon && 
-                <div>
-                    <div>Nombre: {pokemon.name}</div>
-                    <img src={pokemon.sprites.front_default} />
+              </div>
+                <div className="searchbar-btn">
+                    <button onClick={handleClick}>
+                        Buscar 
+                    </button>
                 </div>
-            }
           </div>
+
+          
         </>
     )
 }
