@@ -25,7 +25,7 @@ export const Searchbar = () => {
               </div>
                 <div className="searchbar-btn">
                     <button onClick={handleClick}>
-                        Buscar 
+                        Buscar
                     </button>
                 </div>
           </div>
