@@ -113,3 +113,27 @@ nav {
 .App {
     font-family: sans-serif;
 }
+
+.icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+.pagination-btn {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    margin: 0px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.not-found-text {
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 20px;
+}

@@ -1,36 +1,31 @@
-import React, { useState } from 'react';
-import { buscaPokemon } from '../Api/pokeapi';
+import React from "react";
+const { useState } = React;
 
-export const Searchbar = () => {
-    
-    const [search, setSearch] = useState('');
-    const [pokemon, setPokemon] = useState();
+const Searchbar = (props) => {
+  const { onSearch } = props;
+  const [search, setSearch] = useState("");
 
-    const handleChange = (e) =>{
-        setSearch(e.target.value);
+  const onChange = (e) => {
+    setSearch(e.target.value);
+    if (e.target.value.length === 0) {
+      onSearch(null);
     }
-    const handleClick = async(e) =>{
-        const data = await buscaPokemon(search);
-        setPokemon(data);
-    }
+  };
 
-    return (
-        <>
-          <div className="searchbar-container">
-              <div className="searchbar">
-                <input placeholder="Buscar Pokemon..." 
-                    type="text"
-                    onChange={handleChange}
-                    />
-              </div>
-                <div className="searchbar-btn">
-                    <button onClick={handleClick}>
-                        Buscar
-                    </button>
-                </div>
-          </div>
+  const onClick = async (e) => {
+    onSearch(search);
+  };
 
-          
-        </>
-    )
-}
+  return (
+    <div className="searchbar-container">
+      <div className="searchbar">
+        <input placeholder="Buscar pokemon..." onChange={onChange} />
+      </div>
+      <div className="searchbar-btn">
+        <button onClick={onClick}>Buscar</button>
+      </div>
+    </div>
+  );
+};
+
+export default Searchbar;
