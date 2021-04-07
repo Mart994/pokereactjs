@@ -19,7 +19,7 @@ const Pokedex = (props) => {
                 <h1>Pokedex</h1>
                 <Paginacion 
                 pagina={pagina + 1}
-                totalPage={total}
+                totalPagina={total}
                 onLeft={lastPage}
                 onRight={nextPage}/>
             </div>
