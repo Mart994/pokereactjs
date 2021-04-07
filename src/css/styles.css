@@ -61,6 +61,19 @@ nav {
     grid-gap: 18px;
     padding: 0px 10px;
 }
+
+@media screen and (max-width: 992px) {
+    .pokedex-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+  
+@media screen and (max-width: 600px) {
+   .pokedex-grid {
+    grid-template-columns: repeat(1, 1fr);
+   }
+}
+
 .pokemon-card {
     display: flex;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
