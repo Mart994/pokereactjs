@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import tipoColor from '../Helper/tipoColor';
 const Pokemon = (props) => {
     const { pokemon } = props
     return (
@@ -11,18 +11,22 @@ const Pokemon = (props) => {
             </div>
             <div className="card-body">
                 <div className="card-tittle">
-                    <h3>{pokemon.name}</h3>
-                    <div><h3>#{pokemon.id}</h3></div>
+                    <h3>#{pokemon.id} {pokemon.name}</h3>
+                    
                 </div>
                 <div className="card-botton">
                     <div className="pokemon-type">
                         <div>{pokemon.types.map((type, idx) =>{
                             return(
-                                <div key={idx} className="pokemon-type-text">{type.type.name}</div>
+                                <div key={idx} 
+                                     className="pokemon-type-text"
+                                     style={{ backgroundColor: tipoColor[type.type.name] }}>
+                                    {type.type.name}
+                                </div>
                             )})}
                         </div>
                     </div>
-                    <div className="pokemon-favorite">&#10084;&#65039;</div>
+                    {/* <div className="pokemon-favorite">&#10084;&#65039;</div> */}
                 </div>
             </div>
         </div>
