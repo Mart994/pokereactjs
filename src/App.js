@@ -4,6 +4,7 @@ import Navbar from "./Componentes/navbar";
 import Searchbar from "./Componentes/searchbar";
 import Pokedex from "./Componentes/body";
 import { getPokemons, getPokemonData, searchPokemon } from "./Api/pokeapi";
+import Footer from "./Componentes/Footer";
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
     if (!searching) {
       fetchPokemons();
     }
-  }, [pagina]);
+  }, [pagina]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onSearch = async (pokemon) => {
     if (!pokemon) {
@@ -74,6 +75,8 @@ function App() {
               total={total}/>
             )}
         </div>
+        <br/>
+        <Footer />
       </div>
     </>
   );
