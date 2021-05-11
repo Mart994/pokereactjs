@@ -93,7 +93,7 @@ nav {
 
 .pokemon-card {
     display: flex;
-    background: #ffffff;
+    background: rgb(255, 255, 255, 0.75);
     box-shadow: 9px 9px 16px -1px #00000026;
     border: 1 solid rgba(0,0,0,0.01);
     border-radius: 3px;
