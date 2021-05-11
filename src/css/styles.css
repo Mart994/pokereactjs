@@ -3,6 +3,7 @@
 }
 body {
     background: #e0e5ec;
+    background-image: url(../assets/white.jpeg);
 }
 nav {
     height: 100px;
@@ -14,6 +15,7 @@ nav {
 }
 .navbar-image {
     width: 160px;
+    cursor: pointer;
 }
 
 .searchbar-container{
@@ -25,13 +27,22 @@ nav {
     align-items: stretch;
 
 }
+.home-btn{
+    display: none;
+    border: none;
+    width: 25px;
+    color: black;
+    padding: 10px 12px;
+    margin-left: 20px;
+    cursor: pointer;
+}
 .searchbar{
     background: #e0e5ec;
     margin-right: 20px;
     flex: 1;
 }
 .searchbar input{
-    background: #e0e5ec;
+    background: #ffffff;
     padding: 10px;
     box-shadow: 9px 9px 16px -1px #00000026,
                 -9px -9px 16px -1px #00000026;
@@ -51,7 +62,7 @@ nav {
     color: white;
     padding: 10px 12px;
     margin-left: 20px;
-  }
+}
 
 .paginacion {
     display: flex;
@@ -82,7 +93,7 @@ nav {
 
 .pokemon-card {
     display: flex;
-    background: #e0e5ec;
+    background: #ffffff;
     box-shadow: 9px 9px 16px -1px #00000026;
     border: 1 solid rgba(0,0,0,0.01);
     border-radius: 3px;
